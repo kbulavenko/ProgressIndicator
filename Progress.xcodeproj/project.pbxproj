@@ -13,6 +13,8 @@
 		19203C211FACBB6900B77638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19203C1F1FACBB6900B77638 /* Main.storyboard */; };
 		19203C231FACBB6900B77638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19203C221FACBB6900B77638 /* Assets.xcassets */; };
 		19203C261FACBB6A00B77638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19203C241FACBB6A00B77638 /* LaunchScreen.storyboard */; };
+		1921FD461FB0936F00810C2B /* ProgressCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1921FD451FB0936F00810C2B /* ProgressCounter.m */; };
+		1921FD491FB0985800810C2B /* EventsReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1921FD481FB0985800810C2B /* EventsReceiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		19203C221FACBB6900B77638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19203C251FACBB6A00B77638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19203C271FACBB6A00B77638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1921FD441FB0936F00810C2B /* ProgressCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressCounter.h; sourceTree = "<group>"; };
+		1921FD451FB0936F00810C2B /* ProgressCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressCounter.m; sourceTree = "<group>"; };
+		1921FD471FB0985800810C2B /* EventsReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsReceiver.h; sourceTree = "<group>"; };
+		1921FD481FB0985800810C2B /* EventsReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				19203C1A1FACBB6800B77638 /* AppDelegate.m */,
 				19203C1C1FACBB6800B77638 /* ViewController.h */,
 				19203C1D1FACBB6900B77638 /* ViewController.m */,
+				1921FD441FB0936F00810C2B /* ProgressCounter.h */,
+				1921FD451FB0936F00810C2B /* ProgressCounter.m */,
+				1921FD471FB0985800810C2B /* EventsReceiver.h */,
+				1921FD481FB0985800810C2B /* EventsReceiver.m */,
 				19203C1F1FACBB6900B77638 /* Main.storyboard */,
 				19203C221FACBB6900B77638 /* Assets.xcassets */,
 				19203C241FACBB6A00B77638 /* LaunchScreen.storyboard */,
@@ -152,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19203C1E1FACBB6900B77638 /* ViewController.m in Sources */,
+				1921FD461FB0936F00810C2B /* ProgressCounter.m in Sources */,
 				19203C1B1FACBB6800B77638 /* AppDelegate.m in Sources */,
+				1921FD491FB0985800810C2B /* EventsReceiver.m in Sources */,
 				19203C181FACBB6800B77638 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +324,7 @@
 				19203C2C1FACBB6A00B77638 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

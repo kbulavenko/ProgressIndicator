@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProgressCounter.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *progressPercent;
+
+@property (strong, nonatomic)  ProgressCounter      *progressCounter;
 
 
 @end
