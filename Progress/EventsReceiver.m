@@ -28,10 +28,12 @@
     self.events = [NSMutableArray array];
     self.eventsCount   =   1 + arc4random_uniform(1000);
     for (NSUInteger   i = 0; i < self.eventsCount; i++) {
-        double randomNumber      =  (double) (0.000001 +  1.0 * arc4random_uniform(100)) / (double)(20 +arc4random_uniform(10000));
+        double randomNumber      =  (double) (0.000001 +  1.0 * arc4random_uniform(100)/ ( 1+ arc4random_uniform(1) )) / (double)(1000.0/ ( 1+ arc4random_uniform(5)) +arc4random_uniform(10000));
+        
         NSNumber    *nextNumber  =  [NSNumber   numberWithDouble: randomNumber];
         [self.events addObject: nextNumber];
     }
+    NSLog(@"Events : %@", self.events);
     return true;
 }
 
@@ -45,7 +47,8 @@
         self.isEventsActually = true;
         for (NSInteger   i  = 0; i < self.eventsCount; i++) {
             NSLog(@"Event with number %li start", i);
-            [NSThread  sleepForTimeInterval:  (NSTimeInterval) [self.events objectAtIndex: i].doubleValue ];
+            double   correctionTimeWaiting  =  (self.eventsCount < 100)? 0.1:0.001;
+            [NSThread  sleepForTimeInterval:  (NSTimeInterval) [self.events objectAtIndex: i].doubleValue + correctionTimeWaiting];
             self.actualEventsNumber++;
             NSLog(@"Event with number %li ended. We send notification.", i);
             
