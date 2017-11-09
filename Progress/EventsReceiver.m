@@ -26,19 +26,22 @@
 - (BOOL)receiveEvents {
     if(self.isEventsActually)  return false;
     self.events = [NSMutableArray array];
-    self.eventsCount   =   1 + arc4random_uniform(1000);
+    self.eventsCount   =   1 + arc4random_uniform(10);
     for (NSUInteger   i = 0; i < self.eventsCount; i++) {
-        double randomNumber      =  (double) (0.000001 +  1.0 * arc4random_uniform(100)/ ( 1+ arc4random_uniform(1) )) / (double)(1000.0/ ( 1+ arc4random_uniform(5)) +arc4random_uniform(10000));
+        double randomNumber      =
+        (double) (0.000001 +  1.0 * arc4random_uniform(100)/( 1+ arc4random_uniform(1) )) /
+        (double)(1000.0/ ( 1+ arc4random_uniform(5)) +arc4random_uniform(10000));
         
         NSNumber    *nextNumber  =  [NSNumber   numberWithDouble: randomNumber];
         [self.events addObject: nextNumber];
     }
-    NSLog(@"Events : %@", self.events);
+  //  NSLog(@"Events : %@", self.events);
+    NSLog(@"Events.count : %li", self.events.count);
+    
     return true;
 }
 
 - (void)runEvents {
-    
     if(self.isEventsActually)  return;
    // if(self.)
     NSLog(@"It's  events running begin");
@@ -46,20 +49,23 @@
     dispatch_async(eventsSynchronusQueue, ^{
         self.isEventsActually = true;
         for (NSInteger   i  = 0; i < self.eventsCount; i++) {
-            NSLog(@"Event with number %li start", i);
+            NSLog(@"EventsCount  =  %li Event with number %li start, event longterm = %lf", self.eventsCount, i,[self.events objectAtIndex: i].doubleValue) ;
+            
+            self.actualEventsNumber++;
+
             double   correctionTimeWaiting  =  (self.eventsCount < 100)? 0.1:0.001;
+            correctionTimeWaiting     =   pow (0.3   ,  log10(10 + self.eventsCount));
             [NSThread  sleepForTimeInterval:  (NSTimeInterval) [self.events objectAtIndex: i].doubleValue + correctionTimeWaiting];
             self.actualEventsNumber++;
-            NSLog(@"Event with number %li ended. We send notification.", i);
-            
+          //  NSLog(@"Event with number %li ended. We send notification.", i);
             [[NSNotificationCenter  defaultCenter]   postNotificationName:ProgressEventsActualEventEndedNotification object: self];
         }
         self.isEventsActually = false;
         self.actualEventsNumber = 0;
         NSLog(@"It's  events running ending");
-
     });
 }
+
 
 
 @end

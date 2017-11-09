@@ -16,7 +16,9 @@ static    NSString    *CompletitionPercentageChangedAfterEventNotification = @"C
 
 @property  (strong, nonatomic)  EventsReceiver      *eventsReceiver;
 @property  (assign, nonatomic)  double              completitionPercentage;
-//@property  ()
+@property  (assign, nonatomic)  double              timerPercentCounter;
+@property  (strong, nonatomic)  NSTimer             *timer;
+
 
 
 @end
