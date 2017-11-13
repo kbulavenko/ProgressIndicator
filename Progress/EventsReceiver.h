@@ -20,6 +20,7 @@ static   NSString     *ProgressEventsActualEventEndedNotification   = @"Progress
 - (BOOL)receiveEvents;
 - (void)runEvents;
 
+
 @end
 
 
