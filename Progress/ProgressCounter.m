@@ -65,7 +65,7 @@
         }
         self.timerPercentCounter += self.timerStep;
     }
-     [[NSNotificationCenter  defaultCenter] postNotificationName:CompletitionPercentageChangedAfterEventNotification object:self];
+    [[NSNotificationCenter  defaultCenter] postNotificationName:CompletitionPercentageChangedAfterEventNotification object:self];
 }
 
 @end

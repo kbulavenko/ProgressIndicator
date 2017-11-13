@@ -10,7 +10,6 @@
 
 static   NSString     *ProgressEventsActualEventEndedNotification   = @"ProgressEventsActualEventEndedNotification";
 
-
 @interface EventsReceiver : NSObject
 
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *events;            //  The Events collection
