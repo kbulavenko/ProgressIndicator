@@ -9,16 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "EventsReceiver.h"
 
-static    NSString    *CompletitionPercentageChangedAfterEventNotification = @"CompletitionPercentageChangedAfterEventNotification";
-
+static NSString *CompletitionPercentageChangedAfterEventNotification = @"CompletitionPercentageChangedAfterEventNotification";
 
 @interface ProgressCounter : NSObject
 
-@property  (strong, nonatomic)  EventsReceiver      *eventsReceiver;
-@property  (assign, nonatomic)  double              completitionPercentage;
-@property  (assign, nonatomic)  double              timerPercentCounter;
-@property  (strong, nonatomic)  NSTimer             *timer;
-
+@property (strong, nonatomic) EventsReceiver *eventsReceiver;
+@property (assign, nonatomic) double completitionPercentage;
+@property (assign, nonatomic) double timerPercentCounter;
+@property (strong, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) BOOL isSmoothProgres;
 
 
 @end

@@ -13,17 +13,16 @@ static   NSString     *ProgressEventsActualEventEndedNotification   = @"Progress
 
 @interface EventsReceiver : NSObject
 
-@property (strong, nonatomic) NSMutableArray<NSNumber *>    *events;            //  The Events collection
-@property (assign, nonatomic) NSInteger                     eventsCount;        // It's number of all events
-@property (assign, nonatomic) BOOL                          isEventsActually;   //Some event is Now Activ
-@property (assign, nonatomic) NSInteger                     actualEventsNumber; // Number of current event in collection
-
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *events;            //  The Events collection
+@property (assign, nonatomic) NSInteger eventsCount;        // It's number of all events
+@property (assign, nonatomic) BOOL isEventsActually;   //Some event is Now Activ
+@property (assign, nonatomic) NSInteger actualEventsNumber; // Number of current event in collection
 
 - (BOOL)receiveEvents;
 - (void)runEvents;
 
-
 @end
+
 
 
 

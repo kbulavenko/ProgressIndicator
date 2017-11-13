@@ -26,7 +26,7 @@
 - (BOOL)receiveEvents {
     if(self.isEventsActually)  return false;
     self.events = [NSMutableArray array];
-    self.eventsCount   =   1 + arc4random_uniform(10);
+    self.eventsCount   =   1 + arc4random_uniform(1000);
     for (NSUInteger   i = 0; i < self.eventsCount; i++) {
         double randomNumber      =
         (double) (0.000001 +  1.0 * arc4random_uniform(100)/( 1+ arc4random_uniform(1) )) /
